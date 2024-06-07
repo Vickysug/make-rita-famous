@@ -28,12 +28,13 @@ class Example extends Phaser.Scene {
     logo.setCollideWorldBounds(true);
 
     emitter.startFollow(logo);
-    this.add.text(20, 80, 'Make Rita Famous', { font: 'bold 60px Courier New', fill: '#f54085' });
+    this.add.text(20, 80, 'Make Rita Famous...', { font: 'bold 60px Courier New', fill: '#f54085' });
     this.add.text(420, 140, 'Rita Ora, Born in war-torn', { font: 'bold 20px Courier New', fill: '#000000' });
     this.add.text(420, 160, 'Kosovo in 1990.', { font: 'bold 20px Courier New', fill: '#000000' });
     
     this.add.text(420, 200, 'Moved to London as a refugee', { font: 'bold 20px Courier New', fill: '#000000' });
     this.add.text(420, 220, 'aged one.', { font: 'bold 20px Courier New', fill: '#000000' });
+    
 
     // Create a clickable button or text for scene transition
     const startButton = this.add.text(550, 500, 'Start Game', { font: 'bold 40px Arial', fill: '#65f511' });
@@ -61,7 +62,7 @@ class NewScene extends Phaser.Scene {
     this.load.image('particle', 'https://play.rosebud.ai/assets/emitter_green.png.png?3iPM');
     this.load.audio('metal', 'https://play.rosebud.ai/assets/metal.mp3.mp3?Q65K');
     this.load.audio('boss_junkman', 'https://play.rosebud.ai/assets/boss_junkman.mp3.mp3?AZJ1');
-    this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/Generate a background image of a Beirut food stall.png?ImMj'); // Replace with your image path
+    this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet2.jpg?9gue'); // Replace with your image path
   }
 
   create() {
@@ -182,10 +183,10 @@ class NewScene extends Phaser.Scene {
       callback: () => {
         // Add the background image here
         const background = this.add.image(400, 300, 'newSceneBackground');
-        background.setScale(2); // Example: Scale the image by 2x
+        background.setScale(1); // Example: Scale the image by 2x
 
         // Add "Return to start" button
-        const returnButton = this.add.text(20, 20, 'Return to Start', { font: 'bold 20px Arial', fill: '#000501' });
+        const returnButton = this.add.text(500, 160, 'Return to Start', { font: 'bold 30px Arial', fill: '#f5d50a' });
         returnButton.setInteractive();
 
         // Handle click event to switch back to start scene
@@ -195,7 +196,10 @@ class NewScene extends Phaser.Scene {
         });
 
         // Add the requested text to the NewScene
-        this.add.text(400, 20, 'Kosovo 1990', { font: 'bold 50px Courier New', fill: '#000000' });
+        this.add.text(400, 20, 'Great Work!', { font: 'bold 50px Courier New', fill: '#f50a41' });
+        this.add.text(180, 80, 'One last request before you go!', { font: 'bold 25px Courier New', fill: '#f5930a' });
+        this.add.text(180, 100, 'Please can you help me display my ', { font: 'bold 25px Courier New', fill: '#f5930a' });
+        this.add.text(180, 120, 'awards on the steps of the red carpet?', { font: 'bold 25px Courier New', fill: '#f5930a' });
       },
     });
   }
