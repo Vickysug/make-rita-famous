@@ -29,12 +29,14 @@ class Example extends Phaser.Scene {
 
     emitter.startFollow(logo);
     this.add.text(20, 80, 'Make Rita Famous', { font: 'bold 60px Courier New', fill: '#f54085' });
-    this.add.text(550, 140, 'Rita Ora, Born in', { font: 'bold 20px Courier New', fill: '#000000' });
-    this.add.text(550, 160, 'war-torn Kosovo', { font: 'bold 20px Courier New', fill: '#000000' });
-    this.add.text(550, 180, 'in 1990', { font: 'bold 20px Courier New', fill: '#000000' });
+    this.add.text(420, 140, 'Rita Ora, Born in war-torn', { font: 'bold 20px Courier New', fill: '#000000' });
+    this.add.text(420, 160, 'Kosovo in 1990.', { font: 'bold 20px Courier New', fill: '#000000' });
+    
+    this.add.text(420, 200, 'Moved to London as a refugee', { font: 'bold 20px Courier New', fill: '#000000' });
+    this.add.text(420, 220, 'aged one.', { font: 'bold 20px Courier New', fill: '#000000' });
 
     // Create a clickable button or text for scene transition
-    const startButton = this.add.text(400, 500, 'Start Game', { font: 'bold 40px Arial', fill: '#000501' });
+    const startButton = this.add.text(550, 500, 'Start Game', { font: 'bold 40px Arial', fill: '#65f511' });
     startButton.setInteractive();  // Make the text interactive
 
     // Handle click event to switch scenes
