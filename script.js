@@ -54,15 +54,15 @@ class NewScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('landfill', 'https://play.rosebud.ai/assets/red-carpet1.jpg?KH7Z?awDJ');
+    this.load.image('landfill', 'https://play.rosebud.ai/assets/London2.jpg?S4Ai');
     this.load.image('junkman', 'https://play.rosebud.ai/assets/award-collector.car.png?dUxt');
-    //this.load.image('title_the', 'https://play.rosebud.ai/assets/title_the.png.png?hE5R');
+    this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?3WW1');
     //this.load.image('title_junkman', 'https://play.rosebud.ai/assets/title_junkman.png.png?Dmft');
     this.load.image('crumpled_paper', 'https://play.rosebud.ai/assets/award1.png?R7NK');
     this.load.image('particle', 'https://play.rosebud.ai/assets/emitter_green.png.png?3iPM');
     this.load.audio('metal', 'https://play.rosebud.ai/assets/metal.mp3.mp3?Q65K');
     this.load.audio('boss_junkman', 'https://play.rosebud.ai/assets/boss_junkman.mp3.mp3?AZJ1');
-    this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet2.jpg?9gue'); // Replace with your image path
+    this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet3.jpg?GozZ'); // Replace with your image path
   }
 
   create() {
@@ -151,7 +151,7 @@ class NewScene extends Phaser.Scene {
           counter++;
           counterText.setText('Trash picked up: ' + counter);
           if (counter === 15) {
-            this.add.text(400, 300, 'You win!', { font: '50px Arial', fill: '#ffffff' }).setOrigin(0.5);
+            this.add.text(400, 300, 'Thank you!', { font: '50px Arial', fill: '#ffffff' }).setOrigin(0.5);
             timedEvent.remove(); // Stop the timed event
           }
         }
@@ -160,8 +160,9 @@ class NewScene extends Phaser.Scene {
       crumpled_paper.setDepth(1);
     }
     
-    let title_the = this.add.image(160, -100, 'title_the').setScale(1);
+    let title_the = this.add.image(160, -100, 'title_the').setScale(0.5);
     let title_junkman = this.add.image(500, 800, 'title_junkman').setScale(1);
+    this.add.text(400,20, 'Put the awards in the car', { font: 'bold 20px Courier New', fill: '#f54085' });
 
     this.tweens.add({
       targets: title_the,
@@ -178,7 +179,7 @@ class NewScene extends Phaser.Scene {
     });
 
     this.time.addEvent({
-      delay: 3000,
+      delay: 31000,
       loop: false,
       callback: () => {
         // Add the background image here
@@ -196,10 +197,11 @@ class NewScene extends Phaser.Scene {
         });
 
         // Add the requested text to the NewScene
+        this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?3WW1');
         this.add.text(400, 20, 'Great Work!', { font: 'bold 50px Courier New', fill: '#f50a41' });
-        this.add.text(180, 80, 'One last request before you go!', { font: 'bold 25px Courier New', fill: '#f5930a' });
-        this.add.text(180, 100, 'Please can you help me display my ', { font: 'bold 25px Courier New', fill: '#f5930a' });
-        this.add.text(180, 120, 'awards on the steps of the red carpet?', { font: 'bold 25px Courier New', fill: '#f5930a' });
+        this.add.text(180, 80, 'Now I am famous!', { font: 'bold 25px Courier New', fill: '#f5930a' });
+        this.add.text(180, 100, '', { font: 'bold 25px Courier New', fill: '#f5930a' });
+        this.add.text(180, 120, '', { font: 'bold 25px Courier New', fill: '#f5930a' });
       },
     });
   }
