@@ -56,7 +56,7 @@ class NewScene extends Phaser.Scene {
   preload() {
     this.load.image('landfill', 'https://play.rosebud.ai/assets/London2.jpg?S4Ai');
     this.load.image('junkman', 'https://play.rosebud.ai/assets/award-collector.car.png?dUxt');
-    this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?3WW1');
+    this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.3.png?KbUH');
     //this.load.image('title_junkman', 'https://play.rosebud.ai/assets/title_junkman.png.png?Dmft');
     this.load.image('crumpled_paper', 'https://play.rosebud.ai/assets/award1.png?R7NK');
     this.load.image('particle', 'https://play.rosebud.ai/assets/emitter_green.png.png?3iPM');
