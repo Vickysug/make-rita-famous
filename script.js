@@ -162,7 +162,7 @@ class NewScene extends Phaser.Scene {
     
     let title_the = this.add.image(160, -100, 'title_the').setScale(0.5);
     let title_junkman = this.add.image(500, 800, 'title_junkman').setScale(1);
-    this.add.text(400,20, 'Put the awards in the car', { font: 'bold 20px Courier New', fill: '#f54085' });
+    this.add.text(220,20, 'Put the music awards in the car', { font: 'bold 20px Courier New', fill: '#f54085' });
 
     this.tweens.add({
       targets: title_the,
