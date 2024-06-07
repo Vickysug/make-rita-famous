@@ -104,7 +104,7 @@ class NewScene extends Phaser.Scene {
         timeLeft--;
         timerText.setText('' + timeLeft);
         if (timeLeft === 0) {
-          this.add.text(400, 300, 'You lose!', { font: '50px Arial', fill: '#ffffff' }).setOrigin(0.5);
+          this.add.text(400, 300, 'Thank you!', { font: '40px Arial', fill: '#ffffff' }).setOrigin(0.5);
           timedEvent.remove(); // Stop the timed event
         }
       },
