@@ -55,7 +55,7 @@ class AnotherScene extends Phaser.Scene {
 
   create() {
     // Add the text label with word wrapping
-    const textLabel = this.add.text(20, 20, 'Rita Ora was born in Kosovo in 1990, during the Kosovo war. Her family left Kosovo for political reasons, due to persecution of Albanians initiated with the disintegration of Yugoslavia. \n They relocated to London, England in 1991, when Ora was a baby. She grew up in Notting Hill, in West London, and attended a performing arts school, Sylvia Young Theatre School. \n\n Help Rita become famous by collecting the awards. \n Drag all of them into the car before the timer expires to beat the game.', { font: 'bold 20px Courier New', fill: '#000002', wordWrap: { width: 760, useAdvancedWrap: true } });
+    const textLabel = this.add.text(20, 20, 'Rita Ora was born in Kosovo in 1990, during the Kosovo war.\n\n Her family left Kosovo for political reasons, due to persecution of Albanians initiated with the disintegration of Yugoslavia. \n They relocated to London, England in 1991, when Ora was a baby. She grew up in Notting Hill, in West London, and attended a performing arts school, Sylvia Young Theatre School. \n\n\n\n\n\n Help Rita become famous by collecting music awards for her. \n\n\n Drag all of the awards into the car before the timer expires to beat the game!', { font: 'bold 20px Courier New', fill: '#000002', wordWrap: { width: 760, useAdvancedWrap: true } });
 
     // Add the "Proceed" text button
     const proceedButton = this.add.text(620, 540, 'Proceed', { font: 'bold 40px Arial', fill: '#000000' });
