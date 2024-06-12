@@ -4,9 +4,9 @@ class Example extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('sky', 'https://play.rosebud.ai/assets/kosovo3.jpg?xyry');
-    this.load.image('logo', 'https://play.rosebud.ai/assets/Rita Ora.head.png?UFYK');
-    this.load.image('red', 'https://play.rosebud.ai/assets/red.png?JJBo');
+    this.load.image('sky', 'https://play.rosebud.ai/assets/kosovo3.jpg?riTA');
+    this.load.image('logo', 'https://play.rosebud.ai/assets/Rita Ora.head.png?gK12');
+    this.load.image('red', 'https://play.rosebud.ai/assets/red.png?dj5S');
   }
 
   create() {
@@ -43,7 +43,28 @@ class Example extends Phaser.Scene {
     // Handle click event to switch scenes
     startButton.on('pointerdown', () => {
       console.log('Start Game button clicked');
-      this.scene.start('NewScene'); // Replace 'NewScene' with your actual scene key
+      this.scene.start('AnotherScene'); // Replace 'NewScene' with your actual scene key
+    });
+  }
+}
+
+class AnotherScene extends Phaser.Scene {
+  constructor() {
+    super('AnotherScene');
+  }
+
+  create() {
+    // Add the text label with word wrapping
+    const textLabel = this.add.text(20, 20, 'Rita Ora was born in Kosovo in 1990, during the Kosovo war. Her family left Kosovo for political reasons, due to persecution of Albanians initiated with the disintegration of Yugoslavia. \n They relocated to London, England in 1991, when Ora was a baby. She grew up in Notting Hill, in West London, and attended a performing arts school, Sylvia Young Theatre School. \n\n Help Rita become famous by collecting the awards. \n Drag all of them into the car before the timer expires to beat the game.', { font: 'bold 20px Courier New', fill: '#000002', wordWrap: { width: 760, useAdvancedWrap: true } });
+
+    // Add the "Proceed" text button
+    const proceedButton = this.add.text(620, 540, 'Proceed', { font: 'bold 40px Arial', fill: '#000000' });
+    proceedButton.setInteractive();
+
+    // Handle click event to switch to "NewScene"
+    proceedButton.on('pointerdown', () => {
+      console.log('Proceed button clicked');
+      this.scene.start('NewScene');
     });
   }
 }
@@ -54,15 +75,15 @@ class NewScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('landfill', 'https://play.rosebud.ai/assets/London2.jpg?S4Ai');
-    this.load.image('junkman', 'https://play.rosebud.ai/assets/award-collector.car.png?dUxt');
-    this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.3.png?KbUH');
-    //this.load.image('title_junkman', 'https://play.rosebud.ai/assets/title_junkman.png.png?Dmft');
-    this.load.image('crumpled_paper', 'https://play.rosebud.ai/assets/award1.png?R7NK');
-    this.load.image('particle', 'https://play.rosebud.ai/assets/emitter_green.png.png?3iPM');
-    this.load.audio('metal', 'https://play.rosebud.ai/assets/metal.mp3.mp3?Q65K');
-    this.load.audio('boss_junkman', 'https://play.rosebud.ai/assets/boss_junkman.mp3.mp3?AZJ1');
-    this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet3.jpg?GozZ'); // Replace with your image path
+    this.load.image('landfill', 'https://play.rosebud.ai/assets/London2.jpg?4T5b');
+    this.load.image('junkman', 'https://play.rosebud.ai/assets/award-collector.car.png?OG8L');
+    this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.3.png?jyT3');
+    //this.load.image('title_junkman', 'https://play.rosebud.ai/assets/title_junkman.png.png?8JYn');
+    this.load.image('crumpled_paper', 'https://play.rosebud.ai/assets/award1.png?qknI');
+    this.load.image('particle', 'https://play.rosebud.ai/assets/emitter_green.png.png?ik38');
+    this.load.audio('metal', 'https://play.rosebud.ai/assets/metal.mp3.mp3?zx9E');
+    this.load.audio('boss_junkman', 'https://play.rosebud.ai/assets/boss_junkman.mp3.mp3?6grt');
+    this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet3.jpg?uwf1'); // Replace with your image path
   }
 
   create() {
@@ -197,7 +218,7 @@ class NewScene extends Phaser.Scene {
         });
 
         // Add the requested text to the NewScene
-        this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?3WW1');
+        this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?ekqJ');
         this.add.text(400, 20, 'Great Work!', { font: 'bold 50px Courier New', fill: '#f50a41' });
         this.add.text(180, 80, 'Now I am famous!', { font: 'bold 25px Courier New', fill: '#f5930a' });
         this.add.text(180, 100, '', { font: 'bold 25px Courier New', fill: '#f5930a' });
@@ -224,7 +245,7 @@ const config = {
       debug: false,
     },
   },
-  scene: [Example, NewScene], // Register scenes here
+  scene: [Example, NewScene, AnotherScene], // Register scenes here
 };
 
 const game = new Phaser.Game(config);
