@@ -52,3 +52,5 @@ Created by: hdc_to_ocp.  And the original 2D Playground.
 Although Rosebud can generate AI images, I created all mine in Photoshop. 
 Rosebud also allows the AI chat to change code, however, this didn't work for me so I went into the code myself and changed it. 
 
+My Rosebud game link: https://play.rosebud.ai/games/ba399420-11a0-4410-9728-3f3beee7e01d
+
