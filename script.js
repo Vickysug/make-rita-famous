@@ -93,6 +93,7 @@ class NewScene extends Phaser.Scene {
       { x: 400, y: 360, scale: 0.08 },
       { x: 730, y: 390, scale: 0.15 },
       { x: 190, y: 250, scale: 0.08 },
+      { x: 190, y: 400, scale: 0.25 },
       { x: 240, y: 385, scale: 0.18 },
       { x: 510, y: 410, scale: 0.22 },
       { x: 473, y: 185, scale: 0.05 },
@@ -102,6 +103,8 @@ class NewScene extends Phaser.Scene {
       { x: 770, y: 160, scale: 0.07 },
       { x: 120, y: 250, scale: 0.13 },
       { x: 40, y: 30, scale: 0.1 },
+      { x: 60, y: 60, scale: 0.1 },
+      { x: 90, y: 90, scale: 0.3 },
       { x: 730, y: 570, scale: 1.0 },
     ];
 
@@ -115,17 +118,17 @@ class NewScene extends Phaser.Scene {
     const junkman = this.add.image(630, 340, 'junkman').setScale(0.25);
 
     let counter = 0;
-    const counterText = this.add.text(20, 550, 'Music Awards: 0', { font: '24px Arial', fill: '#ffffff' });
+    const counterText = this.add.text(20, 500, 'Music Awards \n collected: 0', { font: '30px Arial', fill: '#000000' });
 
     let timeLeft = 30;
-    const timerText = this.add.text(30, 390, '30', { font: '160px Arial', fill: '#ffffff' });
+    const timerText = this.add.text(30, 390, '30', { font: '80px Arial', fill: '#000000' });
     const timedEvent = this.time.addEvent({
       delay: 1000,
       callback: () => {
         timeLeft--;
         timerText.setText('' + timeLeft);
         if (timeLeft === 0) {
-          this.add.text(400, 300, 'Thank you!', { font: '40px Arial', fill: '#ffffff' }).setOrigin(0.5);
+          this.add.text(400, 300, 'Thank you! Now to the red carpet!', { font: '40px Arial', fill: '#000000' }).setOrigin(0.5);
           timedEvent.remove(); // Stop the timed event
         }
       },
@@ -133,7 +136,7 @@ class NewScene extends Phaser.Scene {
       loop: true
     });
 
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 18; i++) {
       let x = positions[i].x;
       let y = positions[i].y;
       let scale = positions[i].scale;
@@ -170,9 +173,9 @@ class NewScene extends Phaser.Scene {
           gameObject.setVisible(false);
           gameObject.data.values.counted = true;
           counter++;
-          counterText.setText('Trash picked up: ' + counter);
-          if (counter === 15) {
-            this.add.text(400, 300, 'Thank you!', { font: '50px Arial', fill: '#ffffff' }).setOrigin(0.5);
+          counterText.setText('Music Awards \n collected:' + counter);
+          if (counter === 18) {
+            this.add.text(400, 300, 'Thank you! Now to the red carpet!', { font: '50px Arial', fill: '#000000' }).setOrigin(0.5);
             timedEvent.remove(); // Stop the timed event
           }
         }
