@@ -2,7 +2,7 @@ class Example extends Phaser.Scene {
   constructor() {
     super('Example');
   }
-
+//start screen images
   preload() {
     this.load.image('sky', 'https://play.rosebud.ai/assets/kosovo3.jpg?riTA');
     this.load.image('logo', 'https://play.rosebud.ai/assets/Rita Ora.head.png?gK12');
@@ -20,7 +20,7 @@ class Example extends Phaser.Scene {
       scale: { start: 1, end: 0 },
       blendMode: 'ADD',
     });
-
+    //start screen text and image movement
     const logo = this.physics.add.image(400, 100, 'logo');
 
     logo.setVelocity(100, 200);
@@ -48,6 +48,7 @@ class Example extends Phaser.Scene {
   }
 }
 
+//Scene 2 -information about Rita and game instructions
 class AnotherScene extends Phaser.Scene {
   constructor() {
     super('AnotherScene');
@@ -69,6 +70,7 @@ class AnotherScene extends Phaser.Scene {
   }
 }
 
+//Scene 3 - the game
 class NewScene extends Phaser.Scene {
   constructor() {
     super('NewScene');
@@ -78,14 +80,14 @@ class NewScene extends Phaser.Scene {
     this.load.image('landfill', 'https://play.rosebud.ai/assets/London2.jpg?4T5b');
     this.load.image('junkman', 'https://play.rosebud.ai/assets/award-collector.car.png?OG8L');
     this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.3.png?jyT3');
-    //this.load.image('title_junkman', 'https://play.rosebud.ai/assets/title_junkman.png.png?8JYn');
+    this.load.image('title_junkman', 'https://play.rosebud.ai/assets/game-text.png?5wtI');
     this.load.image('crumpled_paper', 'https://play.rosebud.ai/assets/award1.png?qknI');
     this.load.image('particle', 'https://play.rosebud.ai/assets/emitter_green.png.png?ik38');
     this.load.audio('metal', 'https://play.rosebud.ai/assets/metal.mp3.mp3?zx9E');
     this.load.audio('boss_junkman', 'https://play.rosebud.ai/assets/boss_junkman.mp3.mp3?6grt');
     this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet3.jpg?uwf1'); // Replace with your image path
   }
-
+//position of music wards
   create() {
     const positions = [
       { x: 650, y: 550, scale: 0.1 },
@@ -186,7 +188,7 @@ class NewScene extends Phaser.Scene {
     
     let title_the = this.add.image(160, -100, 'title_the').setScale(0.5);
     let title_junkman = this.add.image(500, 800, 'title_junkman').setScale(1);
-    this.add.text(220,20, 'Put the music awards in the car', { font: 'bold 20px Courier New', fill: '#f54085' });
+    this.add.text(220,20, 'QUICK...', { font: 'bold 40px Courier New', fill: '#f54085' });
 
     this.tweens.add({
       targets: title_the,
@@ -206,7 +208,7 @@ class NewScene extends Phaser.Scene {
       delay: 31000,
       loop: false,
       callback: () => {
-        // Add the background image here
+        // Scene 3 - end of game
         const background = this.add.image(400, 300, 'newSceneBackground');
         background.setScale(1); // Example: Scale the image by 2x
 
