@@ -3,7 +3,6 @@ Aimed at ages 18-25, the 1-2 minute game offers a quick look into the early life
 
 ## Link to deployed page: 
 
-Please note, this is early stages and a work in progress. 
 
 https://vickysug.github.io/make-rita-famous/
 
