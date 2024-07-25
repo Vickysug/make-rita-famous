@@ -56,17 +56,25 @@ class AnotherScene extends Phaser.Scene {
 preload() {
   this.load.image('rita4', 'https://play.rosebud.ai/assets/Rita Ora.png?OrQQ');
   this.load.image('award', 'https://play.rosebud.ai/assets/award1.png?2RHY');
+  this.load.image('babyrita', 'https://play.rosebud.ai/assets/baby.rita.png?Yf4L');
 }
+
+
   create() {
     // Add the text label with word wrapping
     const textLabel = this.add.text(20, 20, 'Rita Ora was born in Kosovo in 1990, during the Kosovo war.\n\n Her family left Kosovo for political reasons, due to persecution of Albanians initiated with the disintegration of Yugoslavia. \n They relocated to London, England in 1991, when Ora was a baby. She grew up in Notting Hill, in West London, and attended a performing arts school, Sylvia Young Theatre School. ', { font: 'bold 20px Courier New', fill: '#000002', wordWrap: { width: 760, useAdvancedWrap: true } });
 
     const textLabel2 = this.add.text(20, 200, ' Help Rita become famous by collecting music awards for her. \n\n Drag all of the awards into the car before the timer expires to beat the game!', { font: 'bold 28px Times New Roman', fill: '#02237d', wordWrap: { width: 760, useAdvancedWrap: true } });
 
+    const textLabel3 = this.add.text(20, 410, 'Baby Rita', { font: '20px Courier New', fill: '#02237d', wordWrap: { width: 760, useAdvancedWrap: true } });
+    
+
+
     this.add.image(400, 500, 'rita4').setScale(.55);
-    this.add.image(200, 500, 'award').setScale(.35);
+    this.add.image(200, 500, 'babyrita').setScale(.18);
+    this.add.image(210, 540, 'award').setScale(.35);
     this.add.image(700, 400, 'award').setScale(.25);
-    this.add.image(100, 370, 'award').setScale(.18);
+    
     // Add the "Proceed" text button
     
     const proceedButton = this.add.text(620, 540, 'Proceed', { font: 'bold 40px Arial', fill: '#8f0404' });
