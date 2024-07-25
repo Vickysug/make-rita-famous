@@ -86,28 +86,32 @@ class NewScene extends Phaser.Scene {
     this.load.audio('metal', 'https://play.rosebud.ai/assets/metal.wav?EZok');
     this.load.audio('boss_junkman', 'https://play.rosebud.ai/assets/boss_junkman.mp3.mp3?6grt');
     this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet2.jpg?rPPJ'); // Replace with your image path
+    this.load.image('rita', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?cgUo');
+    this.load.image('award', 'https://play.rosebud.ai/assets/award1.png?2RHY');
+    
   }
 //position of music wards
   create() {
     const positions = [
-      { x: 650, y: 550, scale: 0.1 },
+      { x: 650, y: 300, scale: 0.15 },
       { x: 360, y: 540, scale: 0.35 },
       { x: 400, y: 360, scale: 0.08 },
-      { x: 730, y: 390, scale: 0.15 },
+      { x: 730, y: 300, scale: 0.15 },
       { x: 190, y: 250, scale: 0.08 },
-      { x: 190, y: 400, scale: 0.25 },
+      { x: 190, y: 270, scale: 0.25 },
       { x: 240, y: 385, scale: 0.18 },
-      { x: 510, y: 410, scale: 0.22 },
-      { x: 473, y: 185, scale: 0.05 },
+      { x: 510, y: 390, scale: 0.22 },
+      { x: 300, y: 250, scale: 0.05 },
       { x: 73, y: 365, scale: 0.07 },
       { x: 490, y: 295, scale: 0.09 },
-      { x: 450, y: 580, scale: 0.7 },
+      { x: 450, y: 200, scale: 0.22 },
       { x: 770, y: 160, scale: 0.07 },
       { x: 120, y: 250, scale: 0.13 },
-      { x: 40, y: 30, scale: 0.1 },
-      { x: 60, y: 60, scale: 0.1 },
-      { x: 90, y: 90, scale: 0.3 },
-      { x: 730, y: 570, scale: 1.0 },
+      { x: 510, y: 30, scale: 0.1 },
+      { x: 700, y: 60, scale: 0.1 },
+      { x: 50, y: 90, scale: 0.3 },
+      { x: 730, y: 200, scale: 0.3 },
+      
     ];
 
     this.sound.play('metal');
@@ -117,7 +121,7 @@ class NewScene extends Phaser.Scene {
     });
 
     this.add.image(400, 300, 'landfill').setScale(.75);
-    const junkman = this.add.image(630, 340, 'junkman').setScale(0.25);
+    const junkman = this.add.image(630, 480, 'junkman').setScale(0.25);
 
     let counter = 0;
     const counterText = this.add.text(20, 500, 'Music Awards \n collected: 0', { font: '30px Arial', fill: '#000000' });
@@ -221,7 +225,10 @@ class NewScene extends Phaser.Scene {
           console.log('Return to Start button clicked');
           this.scene.start('Example');
         });
-
+        this.add.image(500, 500, 'rita').setScale(.75);
+        this.add.image(400, 275, 'award').setScale(.50);
+        this.add.image(330, 275, 'award').setScale(.30);
+        this.add.image(485, 275, 'award').setScale(.35);
         // Add the requested text to the NewScene
         this.load.image('500, 300', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?ekqJ');
         this.load.image('600, 100', 'https://play.rosebud.ai/assets/award1.png?2RHY');
