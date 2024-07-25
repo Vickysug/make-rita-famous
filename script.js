@@ -4,8 +4,8 @@ class Example extends Phaser.Scene {
   }
 //start screen images
   preload() {
-    this.load.image('sky', 'https://play.rosebud.ai/assets/kosovo3.jpg?riTA');
-    this.load.image('logo', 'https://play.rosebud.ai/assets/Rita Ora.head.png?gK12');
+    this.load.image('sky', 'https://play.rosebud.ai/assets/kosovo3.jpg?PVxN');
+    this.load.image('logo', 'https://play.rosebud.ai/assets/Rita Ora.head.png?TAz2');
     this.load.image('red', 'https://play.rosebud.ai/assets/red.png?dj5S');
   }
 
@@ -77,15 +77,15 @@ class NewScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('landfill', 'https://play.rosebud.ai/assets/London2.jpg?4T5b');
-    this.load.image('junkman', 'https://play.rosebud.ai/assets/award-collector.car.png?OG8L');
-    this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.3.png?jyT3');
+    this.load.image('landfill', 'https://play.rosebud.ai/assets/London2.jpg?MEKn');
+    this.load.image('junkman', 'https://play.rosebud.ai/assets/award-collector.car.png?9bB7');
+    this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.3.png?tfbE');
     this.load.image('title_junkman', 'https://play.rosebud.ai/assets/game-text.png?5wtI');
-    this.load.image('crumpled_paper', 'https://play.rosebud.ai/assets/award1.png?qknI');
-    this.load.image('particle', 'https://play.rosebud.ai/assets/emitter_green.png.png?ik38');
-    this.load.audio('metal', 'https://play.rosebud.ai/assets/metal.mp3.mp3?zx9E');
+    this.load.image('crumpled_paper', 'https://play.rosebud.ai/assets/award1.png?2RHY');
+    this.load.image('particle', 'https://play.rosebud.ai/assets/emitter.png?BaQV');
+    this.load.audio('metal', 'https://play.rosebud.ai/assets/metal.wav?EZok');
     this.load.audio('boss_junkman', 'https://play.rosebud.ai/assets/boss_junkman.mp3.mp3?6grt');
-    this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet3.jpg?uwf1'); // Replace with your image path
+    this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet2.jpg?rPPJ'); // Replace with your image path
   }
 //position of music wards
   create() {
@@ -223,7 +223,9 @@ class NewScene extends Phaser.Scene {
         });
 
         // Add the requested text to the NewScene
-        this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?ekqJ');
+        this.load.image('500, 300', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?ekqJ');
+        this.load.image('600, 100', 'https://play.rosebud.ai/assets/award1.png?2RHY');
+
         this.add.text(400, 20, 'Great Work!', { font: 'bold 50px Courier New', fill: '#f50a41' });
         this.add.text(180, 80, 'Now I am famous!', { font: 'bold 25px Courier New', fill: '#f5930a' });
         this.add.text(180, 100, '', { font: 'bold 25px Courier New', fill: '#f5930a' });
