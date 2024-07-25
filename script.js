@@ -53,21 +53,32 @@ class AnotherScene extends Phaser.Scene {
   constructor() {
     super('AnotherScene');
   }
-
+preload() {
+  this.load.image('rita4', 'https://play.rosebud.ai/assets/Rita Ora.png?OrQQ');
+  this.load.image('award', 'https://play.rosebud.ai/assets/award1.png?2RHY');
+}
   create() {
     // Add the text label with word wrapping
-    const textLabel = this.add.text(20, 20, 'Rita Ora was born in Kosovo in 1990, during the Kosovo war.\n\n Her family left Kosovo for political reasons, due to persecution of Albanians initiated with the disintegration of Yugoslavia. \n They relocated to London, England in 1991, when Ora was a baby. She grew up in Notting Hill, in West London, and attended a performing arts school, Sylvia Young Theatre School. \n\n\n\n\n\n Help Rita become famous by collecting music awards for her. \n\n\n Drag all of the awards into the car before the timer expires to beat the game!', { font: 'bold 20px Courier New', fill: '#000002', wordWrap: { width: 760, useAdvancedWrap: true } });
+    const textLabel = this.add.text(20, 20, 'Rita Ora was born in Kosovo in 1990, during the Kosovo war.\n\n Her family left Kosovo for political reasons, due to persecution of Albanians initiated with the disintegration of Yugoslavia. \n They relocated to London, England in 1991, when Ora was a baby. She grew up in Notting Hill, in West London, and attended a performing arts school, Sylvia Young Theatre School. ', { font: 'bold 20px Courier New', fill: '#000002', wordWrap: { width: 760, useAdvancedWrap: true } });
 
+    const textLabel2 = this.add.text(20, 200, ' Help Rita become famous by collecting music awards for her. \n\n Drag all of the awards into the car before the timer expires to beat the game!', { font: 'bold 28px Times New Roman', fill: '#240582', wordWrap: { width: 760, useAdvancedWrap: true } });
+
+    this.add.image(400, 500, 'rita4').setScale(.55);
+    this.add.image(200, 500, 'award').setScale(.35);
+    this.add.image(700, 400, 'award').setScale(.25);
+    this.add.image(100, 370, 'award').setScale(.18);
     // Add the "Proceed" text button
-    const proceedButton = this.add.text(620, 540, 'Proceed', { font: 'bold 40px Arial', fill: '#000000' });
+    
+    const proceedButton = this.add.text(620, 540, 'Proceed', { font: 'bold 40px Arial', fill: '#8f0404' });
     proceedButton.setInteractive();
-
+    
     // Handle click event to switch to "NewScene"
     proceedButton.on('pointerdown', () => {
       console.log('Proceed button clicked');
       this.scene.start('NewScene');
     });
   }
+  
 }
 
 //Scene 3 - the game
@@ -88,6 +99,7 @@ class NewScene extends Phaser.Scene {
     this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet2.jpg?rPPJ'); // Replace with your image path
     this.load.image('rita', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?cgUo');
     this.load.image('award', 'https://play.rosebud.ai/assets/award1.png?2RHY');
+    
     
   }
 //position of music wards
@@ -230,8 +242,7 @@ class NewScene extends Phaser.Scene {
         this.add.image(330, 275, 'award').setScale(.30);
         this.add.image(485, 275, 'award').setScale(.35);
         // Add the requested text to the NewScene
-        this.load.image('500, 300', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?ekqJ');
-        this.load.image('600, 100', 'https://play.rosebud.ai/assets/award1.png?2RHY');
+        
 
         this.add.text(400, 20, 'Great Work!', { font: 'bold 50px Courier New', fill: '#f50a41' });
         this.add.text(180, 80, 'Now I am famous!', { font: 'bold 25px Courier New', fill: '#f5930a' });
