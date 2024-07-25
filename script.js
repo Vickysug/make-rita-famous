@@ -236,27 +236,78 @@ class NewScene extends Phaser.Scene {
         const background = this.add.image(400, 300, 'newSceneBackground');
         background.setScale(1); // Example: Scale the image by 2x
 
-        // Add "Return to start" button
-        const returnButton = this.add.text(500, 160, 'Return to Start', { font: 'bold 30px Arial', fill: '#f5d50a' });
-        returnButton.setInteractive();
+        // Add "Go to Chat" button
+        const chatButton = this.add.text(500, 160, 'Go to chat', { font: 'bold 30px Courier New', fill: '#f5d50a' });
+        chatButton.setInteractive();
 
-        // Handle click event to switch back to start scene
-        returnButton.on('pointerdown', () => {
-          console.log('Return to Start button clicked');
-          this.scene.start('Example');
+        // Handle click event to switch to chat scene
+        chatButton.on('pointerdown', () => {
+          console.log('Go to Chat button clicked');
+          this.scene.start('ChatScene');
         });
+
         this.add.image(500, 500, 'rita').setScale(.75);
         this.add.image(400, 275, 'award').setScale(.50);
         this.add.image(330, 275, 'award').setScale(.30);
         this.add.image(485, 275, 'award').setScale(.35);
-        // Add the requested text to the NewScene
-        
 
         this.add.text(400, 20, 'Great Work!', { font: 'bold 50px Courier New', fill: '#f50a41' });
         this.add.text(180, 80, 'Now I am famous!', { font: 'bold 25px Courier New', fill: '#f5930a' });
-        this.add.text(180, 100, '', { font: 'bold 25px Courier New', fill: '#f5930a' });
-        this.add.text(180, 120, '', { font: 'bold 25px Courier New', fill: '#f5930a' });
       },
+    });
+  }
+}
+
+// New ChatScene
+class ChatScene extends Phaser.Scene {
+  constructor() {
+    super('ChatScene');
+  }
+
+  preload() {
+    this.load.image('chatBackground', 'https://play.rosebud.ai/assets/red-carpet2.jpg?rPPJ');
+    this.load.image('ritaChat', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?cgUo');
+  }
+
+  create() {
+    // Add chat background
+    this.add.image(400, 300, 'chatBackground').setScale(1);
+
+    // Add Rita's image
+    this.add.image(700, 500, 'ritaChat').setScale(0.5);
+
+    // Add chat title
+    this.add.text(400, 50, 'Chat with Rita', { font: 'bold 40px Arial', fill: '#ffffff' }).setOrigin(0.5);
+
+    // Add chat messages
+    const messages = [
+      "Rita: Hey there! Thanks for helping me become famous!",
+      "You: It was my pleasure, Rita! You're amazing!",
+      "Rita: What was your favorite part of the game?",
+      "You: Collecting all those music awards was so much fun!",
+      "Rita: I'm glad you enjoyed it! Want to hear a fun fact?",
+      "You: Absolutely! Tell me!",
+      "Rita: I was actually born in Pristina, Kosovo!",
+      "You: Wow, I didn't know that! You've come so far!",
+      "Rita: Indeed! Thanks for being part of my journey!"
+    ];
+
+    let yPos = 100;
+    messages.forEach((message, index) => {
+      const style = { font: '18px Arial', fill: index % 2 === 0 ? '#ffff00' : '#ffffff', wordWrap: { width: 500 } };
+      this.add.text(50, yPos, message, style);
+      yPos += 50;
+    });
+
+    // Add "Return to Start" button
+    const returnButton = this.add.text(400, 550, 'Return to Start', { font: 'bold 30px Arial', fill: '#f5d50a' });
+    returnButton.setInteractive();
+    returnButton.setOrigin(0.5);
+
+    // Handle click event to switch back to start scene
+    returnButton.on('pointerdown', () => {
+      console.log('Return to Start button clicked');
+      this.scene.start('Example');
     });
   }
 }
@@ -278,7 +329,7 @@ const config = {
       debug: false,
     },
   },
-  scene: [Example, NewScene, AnotherScene], // Register scenes here
+  scene: [Example, AnotherScene, NewScene, ChatScene], // Added ChatScene here
 };
 
 const game = new Phaser.Game(config);
