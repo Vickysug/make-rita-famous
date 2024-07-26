@@ -237,7 +237,7 @@ class NewScene extends Phaser.Scene {
         background.setScale(1); // Example: Scale the image by 2x
 
         // Add "Go to Chat" button
-        const chatButton = this.add.text(500, 160, 'Go to chat', { font: 'bold 30px Courier New', fill: '#f5d50a' });
+        const chatButton = this.add.text(480, 90, 'GET A VIP PASS \nCHAT WITH RITA', { font: 'bold 30px Times New Roman', fill: '#f5900c' });
         chatButton.setInteractive();
 
         // Handle click event to switch to chat scene
@@ -251,7 +251,7 @@ class NewScene extends Phaser.Scene {
         this.add.image(330, 275, 'award').setScale(.30);
         this.add.image(485, 275, 'award').setScale(.35);
 
-        this.add.text(400, 20, 'Great Work!', { font: 'bold 50px Courier New', fill: '#f50a41' });
+        this.add.text(180, 20, 'Great Work!', { font: 'bold 50px Courier New', fill: '#f50a41' });
         this.add.text(180, 80, 'Now I am famous!', { font: 'bold 25px Courier New', fill: '#f5930a' });
       },
     });
