@@ -1,3 +1,78 @@
+const CHARACTER_NAME = "Rita Ora";
+
+// Describe your chatbot here. This defines exactly how it will behave.
+const CHARACTER_DESCRIPTION = `
+You are Rita Ora, a British singer, songwriter, and actress known for your dynamic presence in the music and entertainment industry.
+
+Information about you:
+
+Rita Ora has made a significant impact with her powerful voice, hit songs, and charismatic performances. Born in Kosovo and raised in London, Rita has faced various challenges but has risen to fame with her talent and determination. She enjoys connecting with fans and sharing her experiences from the music industry and personal journey.
+
+Rita Ora is a British singer, songwriter, and actress who gained fame in the early 2010s. Here’s a comprehensive overview of her career and personal life that could be useful for a chatbot:
+
+Basic Information:
+Full Name: Rita Sahatçiu Ora
+Date of Birth: November 26, 1990
+Place of Birth: Pristina, Kosovo (then part of Yugoslavia)
+Nationality: British (Her family moved to the UK when she was a baby, fleeing the political turmoil in Kosovo)
+Ethnicity: Albanian
+Music Career:
+Debut Album: Ora (2012)
+Featured hits like "R.I.P." and "How We Do (Party)," which both topped the UK charts.
+Second Album: Phoenix (2018)
+Included successful singles like "Anywhere" and "Let You Love Me."
+Notable Collaborations: Rita has worked with various artists, including DJ Fresh ("Hot Right Now"), Iggy Azalea ("Black Widow"), and Avicii ("Lonely Together").
+Music Style: Her music is a mix of pop, R&B, and dance, often featuring catchy hooks and upbeat tempos.
+Acting Career:
+Film Appearances:
+Fifty Shades of Grey series (as Mia Grey, Christian Grey’s sister)
+Southpaw (2015)
+Pokémon Detective Pikachu (2019)
+Television:
+Served as a judge/coach on popular shows like The Voice UK, The X Factor, and America’s Next Top Model.
+Other Ventures:
+Fashion: Known for her distinctive style, Rita has collaborated with brands like Adidas, where she released several collections.
+Modeling: She has been the face of various campaigns for brands like DKNY, Rimmel, and Tezenis.
+Entrepreneurship: Launched her own tequila brand, Próspero Tequila, in 2019.
+Personal Life:
+Family Background: Rita’s parents, Vera and Besnik Sahatçiu, are Albanian. Her mother is a psychiatrist, and her father is a pub owner. She has an older sister, Elena, and a younger brother, Don.
+Relationships: Rita Ora has been linked to several high-profile individuals, including Calvin Harris, Rob Kardashian, and Taika Waititi, whom she married in 2022.
+Philanthropy: She has been involved in various charitable activities, including fundraising for UNICEF and participating in charity singles like "Band Aid 30" in 2014.
+Trivia:
+Languages: Besides English, Rita is fluent in Albanian.
+Name Origin: Her birth surname is Sahatçiu, but her family added "Ora," which means "time" in Albanian, to make it easier to pronounce.
+Notable Awards: Rita has received several awards, including a MTV Europe Music Award and several BRIT Award nominations.
+Social Media:
+Instagram: @ritaora
+Twitter: @RitaOra
+Followers: She has millions of followers across her social media platforms, where she shares updates on her music, fashion, and personal life.
+This information provides a well-rounded view of Rita Ora's life and career, which could be used to respond to various questions about her.
+
+First Message of Roleplay:
+
+"Hi there! Would you like to hear about my journey in the music world and how I became an artist? Feel free to ask me anything."
+
+NOTE: 
+(Ensure your responses are short so the player can respond. Engage the player by asking questions about Rita Ora's life and career after every response.)
+`;
+
+
+// This is the URL of the image for your chatbot's background image.
+const BACKGROUND_IMAGE_URL = `https://play.rosebud.ai/assets/red-carpet2.jpg?rPPJ`
+
+// This is the URL of the image for your chatbot.
+const CHARACTER_IMAGE_URL = `https://play.rosebud.ai/assets/Rita Ora.head.2.png?cgUo`
+
+// Put URLs of all songs you want to be shuffled in this games's playlist.
+const SONG_PLAYLIST_URLS = [
+    `https://play.rosebud.ai/assets/Stream Loops 2024-03-20_01.mp3.mp3?j5o4`,
+    `https://play.rosebud.ai/assets/Stream Loops 2024-03-06_02.mp3.mp3?3Ekr`,
+    `https://play.rosebud.ai/assets/Stream Loops 2024-03-06_01.mp3.mp3?eQMW`
+]; 
+
+// END OF EASY-MODIFY VALUES
+//////////////////////////////////////////////////////////////
+
 class Example extends Phaser.Scene {
   constructor() {
     super('Example');
@@ -13,6 +88,8 @@ class Example extends Phaser.Scene {
     document.title = "Make Rita Famous"; // Changes the title of the webpage
 
     this.add.image(400, 300, 'sky');
+     // Change the background to cream color
+    this.cameras.main.setBackgroundColor('#FFFDD0');
 
     const particles = this.add.particles('red');
     const emitter = particles.createEmitter({
@@ -48,7 +125,6 @@ class Example extends Phaser.Scene {
   }
 }
 
-//Scene 2 -information about Rita and game instructions
 class AnotherScene extends Phaser.Scene {
   constructor() {
     super('AnotherScene');
@@ -76,6 +152,8 @@ preload() {
     this.add.image(700, 400, 'award').setScale(.25);
     
     // Add the "Proceed" text button
+     // Change the background to cream color
+    this.cameras.main.setBackgroundColor('#FFFDD0');
     
     const proceedButton = this.add.text(620, 540, 'Proceed', { font: 'bold 40px Arial', fill: '#8f0404' });
     proceedButton.setInteractive();
@@ -89,7 +167,6 @@ preload() {
   
 }
 
-//Scene 3 - the game
 class NewScene extends Phaser.Scene {
   constructor() {
     super('NewScene');
@@ -142,6 +219,8 @@ class NewScene extends Phaser.Scene {
 
     this.add.image(400, 300, 'landfill').setScale(.75);
     const junkman = this.add.image(630, 480, 'junkman').setScale(0.25);
+     // Change the background to cream color
+    this.cameras.main.setBackgroundColor('#FFFDD0');
 
     let counter = 0;
     const counterText = this.add.text(20, 500, 'Music Awards \n collected: 0', { font: '30px Arial', fill: '#000000' });
@@ -256,80 +335,96 @@ class NewScene extends Phaser.Scene {
       },
     });
   }
+}// Your chatbot's name
+
+class BootScene extends Phaser.Scene {
+    constructor() {
+        super({ key: 'BootScene' });
+    }
+
+    preload() {
+        SONG_PLAYLIST_URLS.forEach((url, index) => {
+            this.load.audio(`track_${index}`, url);
+        });
+    }
+
+    create() {
+        this.game.musicManager = new MusicManager(this.game);
+        const musicKeys = SONG_PLAYLIST_URLS.map((_, index) => `track_${index}`);
+        this.game.musicManager.setPlaylist(musicKeys);
+        this.game.musicManager.playNextTrack();
+        this.game.musicManager.shufflePlaylist();
+        console.log(this.game.musicManager.playlist);
+
+        this.checkForExistingSave();
+
+        this.scene.start('Example');
+    }
+
+    checkForExistingSave() {
+        const saveData = localStorage.getItem(PROJECT_NAME);
+        if (saveData) {
+            console.info('Save detected.');
+            this.game.saveData = JSON.parse(saveData);
+        } else {
+            console.info('No save detected. Initializing new game state.');
+            this.game.saveData = {
+                chatLog: '',
+                characterChatManagerState: null,
+            };
+
+            localStorage.setItem(PROJECT_NAME, JSON.stringify(this.game.saveData));
+        }
+    }
 }
 
-// New ChatScene
-class ChatScene extends Phaser.Scene {
-  constructor() {
-    super('ChatScene');
-  }
+function loadScript(url) {
+    return new Promise((resolve, reject) => {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = url;
 
-  preload() {
-    this.load.image('chatBackground', 'https://play.rosebud.ai/assets/red-carpet2.jpg?rPPJ');
-    this.load.image('ritaChat', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?cgUo');
-  }
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error('Script loading failed for ' + url));
 
-  create() {
-    // Add chat background
-    this.add.image(400, 300, 'chatBackground').setScale(1);
-
-    // Add Rita's image
-    this.add.image(700, 500, 'ritaChat').setScale(0.5);
-
-    // Add chat title
-    this.add.text(400, 50, 'Chat with Rita', { font: 'bold 40px Arial', fill: '#ffffff' }).setOrigin(0.5);
-
-    // Add chat messages
-    const messages = [
-      "Rita: Hey there! Thanks for helping me become famous!",
-      "You: It was my pleasure, Rita! You're amazing!",
-      "Rita: What was your favorite part of the game?",
-      "You: Collecting all those music awards was so much fun!",
-      "Rita: I'm glad you enjoyed it! Want to hear a fun fact?",
-      "You: Absolutely! Tell me!",
-      "Rita: I was actually born in Pristina, Kosovo!",
-      "You: Wow, I didn't know that! You've come so far!",
-      "Rita: Indeed! Thanks for being part of my journey!"
-    ];
-
-    let yPos = 100;
-    messages.forEach((message, index) => {
-      const style = { font: '18px Arial', fill: index % 2 === 0 ? '#ffff00' : '#ffffff', wordWrap: { width: 500 } };
-      this.add.text(50, yPos, message, style);
-      yPos += 50;
+        document.head.appendChild(script);
     });
-
-    // Add "Return to Start" button
-    const returnButton = this.add.text(400, 550, 'Return to Start', { font: 'bold 30px Arial', fill: '#f5d50a' });
-    returnButton.setInteractive();
-    returnButton.setOrigin(0.5);
-
-    // Handle click event to switch back to start scene
-    returnButton.on('pointerdown', () => {
-      console.log('Return to Start button clicked');
-      this.scene.start('Example');
-    });
-  }
 }
 
-const config = {
-  type: Phaser.AUTO,
-  parent: 'renderDiv',
-  scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
-    width: 800,
-    height: 600,
-  },
-  backgroundColor: '#ffcc99',
-  physics: {
-    default: 'arcade',
-    arcade: {
-      gravity: { y: 300 },
-      debug: false,
-    },
-  },
-  scene: [Example, AnotherScene, NewScene, ChatScene], // Added ChatScene here
-};
+const VERSION_NUMBER = 'v1';
+const PROJECT_NAME = `${CHARACTER_NAME} AI Character ${VERSION_NUMBER}`;
 
-const game = new Phaser.Game(config);
+async function initializeGame() {
+    try {
+        await loadScript(`https://play.rosebud.ai/assets/rosebud_AI_character_template_desktop_library.js.js?sVAG`);
+        console.log('Script loaded successfully');
+
+        const config = {
+            type: Phaser.AUTO,
+            parent: 'renderDiv',
+            scale: {
+                mode: Phaser.Scale.FIT,
+                autoCenter: Phaser.Scale.CENTER_BOTH,
+            },
+            width: 800,
+            height: 600,
+            scene: [BootScene, Example, AnotherScene, NewScene, ChatScene],
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 200 }
+                }
+            },
+            dom: {
+                createContainer: true,
+            },
+        };
+
+        window.game = new Phaser.Game(config);
+        window.game.sceneTransitionManager = new SceneTransitionManager(game);
+    } catch (error) {
+        console.error('Failed to load external script or initialize the Phaser game:', error);
+    }
+}
+
+initializeGame();

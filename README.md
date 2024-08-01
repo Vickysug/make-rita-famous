@@ -1,10 +1,14 @@
 # Make Rita Famous
-Aimed at ages 18-25, the 1-2 minute game offers a quick look into the early life of a celebrity refugee. The game allows the player to help the singer collect music awards.
+Aimed at ages 18-25, the 1-2 minute game offers a quick look into the early life of a celebrity refugee. The game allows the player to help the singer collect music awards then gain a VIP pass to chat with Rita. 
 
 ## Link to deployed page: 
 
 
-https://vickysug.github.io/make-rita-famous/
+https://vickysug.github.io/make-rita-famous/ (Note the chat scene is specific to Rosebud AI and will not work in the deployed Github link)
+
+ ## Roesbud Link
+ 
+ https://play.rosebud.ai/games/ba399420-11a0-4410-9728-3f3beee7e01d
 
 ![alt text](images/start.scrn.shot.png)
 
