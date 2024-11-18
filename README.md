@@ -8,20 +8,11 @@ https://vickysug.github.io/make-rita-famous/ (Note the chat scene is specific to
 
  ## Roesbud Link
  
- https://play.rosebud.ai/games/ba399420-11a0-4410-9728-3f3beee7e01d
-
+https://play.rosebud.ai/projects/339c85ff-2faa-4cfb-8dac-252581047529
 ![alt text](images/start.scrn.shot.png)
 
 ## End mission:
 Help Rita become famous by collecting music awards. After you have collectd them you can help her display them on a red carpet.
-
-## Link to my storyborad on Canva: 
-
-This is in a presentaion style:
-
-https://www.canva.com/design/DAGHL3PF374/St0ZDztcuNN180yY15OiPg/edit?utm_content=DAGHL3PF374&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
-![alt text](images/canva.png)
 
 ## Project Brief
 

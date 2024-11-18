@@ -10,6 +10,7 @@ Rita Ora has made a significant impact with her powerful voice, hit songs, and c
 
 Rita Ora is a British singer, songwriter, and actress who gained fame in the early 2010s. Here’s a comprehensive overview of her career and personal life that could be useful for a chatbot:
 
+
 Basic Information:
 Full Name: Rita Sahatçiu Ora
 Date of Birth: November 26, 1990
@@ -42,6 +43,8 @@ Trivia:
 Languages: Besides English, Rita is fluent in Albanian.
 Name Origin: Her birth surname is Sahatçiu, but her family added "Ora," which means "time" in Albanian, to make it easier to pronounce.
 Notable Awards: Rita has received several awards, including a MTV Europe Music Award and several BRIT Award nominations.
+Awards from today in the game: R the person chatting with you just collected for you. It was a game and they put the into the car. This really helped you become famous.
+
 Social Media:
 Instagram: @ritaora
 Twitter: @RitaOra
@@ -61,7 +64,7 @@ NOTE:
 const BACKGROUND_IMAGE_URL = `https://play.rosebud.ai/assets/red-carpet2.jpg?rPPJ`
 
 // This is the URL of the image for your chatbot.
-const CHARACTER_IMAGE_URL = `https://play.rosebud.ai/assets/Rita Ora.head.2.png?cgUo`
+const CHARACTER_IMAGE_URL = `https://play.rosebud.ai/assets/Rita-headphones.png?mnCr`
 
 // Put URLs of all songs you want to be shuffled in this games's playlist.
 const SONG_PLAYLIST_URLS = [
@@ -80,7 +83,7 @@ class Example extends Phaser.Scene {
 //start screen images
   preload() {
     this.load.image('sky', 'https://play.rosebud.ai/assets/kosovo3.jpg?PVxN');
-    this.load.image('logo', 'https://play.rosebud.ai/assets/Rita Ora.head.png?TAz2');
+    this.load.image('logo', 'https://play.rosebud.ai/assets/cartoon-AI-Rita-small.png?TOFS');
     this.load.image('red', 'https://play.rosebud.ai/assets/red.png?dj5S');
   }
 
@@ -130,9 +133,9 @@ class AnotherScene extends Phaser.Scene {
     super('AnotherScene');
   }
 preload() {
-  this.load.image('rita4', 'https://play.rosebud.ai/assets/Rita Ora.png?OrQQ');
+  this.load.image('rita4', 'https://play.rosebud.ai/assets/cartoon-AI-Rita.small.png?GklS');
   this.load.image('award', 'https://play.rosebud.ai/assets/award1.png?2RHY');
-  this.load.image('babyrita', 'https://play.rosebud.ai/assets/baby.rita.png?Yf4L');
+  
 }
 
 
@@ -142,7 +145,7 @@ preload() {
 
     const textLabel2 = this.add.text(20, 200, ' Help Rita become famous by collecting music awards for her. \n\n Drag all of the awards into the car before the timer expires to beat the game!', { font: 'bold 28px Times New Roman', fill: '#02237d', wordWrap: { width: 760, useAdvancedWrap: true } });
 
-    const textLabel3 = this.add.text(20, 410, 'Baby Rita', { font: '20px Courier New', fill: '#02237d', wordWrap: { width: 760, useAdvancedWrap: true } });
+    const textLabel3 = this.add.text(20, 410, '', { font: '20px Courier New', fill: '#02237d', wordWrap: { width: 760, useAdvancedWrap: true } });
     
 
 
@@ -175,15 +178,17 @@ class NewScene extends Phaser.Scene {
   preload() {
     this.load.image('landfill', 'https://play.rosebud.ai/assets/London2.jpg?MEKn');
     this.load.image('junkman', 'https://play.rosebud.ai/assets/award-collector.car.png?9bB7');
-    this.load.image('title_the', 'https://play.rosebud.ai/assets/Rita Ora.head.3.png?tfbE');
+    this.load.image('title_the', 'https://play.rosebud.ai/assets/cartoon-AI-Rita-small.png?TOFS');
     this.load.image('title_junkman', 'https://play.rosebud.ai/assets/game-text.png?5wtI');
     this.load.image('crumpled_paper', 'https://play.rosebud.ai/assets/award1.png?2RHY');
     this.load.image('particle', 'https://play.rosebud.ai/assets/emitter.png?BaQV');
     this.load.audio('metal', 'https://play.rosebud.ai/assets/metal.wav?EZok');
     this.load.audio('boss_junkman', 'https://play.rosebud.ai/assets/boss_junkman.mp3.mp3?6grt');
     this.load.image('newSceneBackground', 'https://play.rosebud.ai/assets/red-carpet2.jpg?rPPJ'); // Replace with your image path
-    this.load.image('rita', 'https://play.rosebud.ai/assets/Rita Ora.head.2.png?cgUo');
+    this.load.image('rita', 'https://play.rosebud.ai/assets/Rita-headphones.png?mnCr');
     this.load.image('award', 'https://play.rosebud.ai/assets/award1.png?2RHY');
+        this.load.image('rita-gown', 'https://play.rosebud.ai/assets/Rita-ball-gown.png?vuUL');
+
     
     
   }
@@ -316,7 +321,7 @@ class NewScene extends Phaser.Scene {
         background.setScale(1); // Example: Scale the image by 2x
 
         // Add "Go to Chat" button
-        const chatButton = this.add.text(480, 90, 'GET A VIP PASS \nCHAT WITH RITA', { font: 'bold 30px Times New Roman', fill: '#f5900c' });
+        const chatButton = this.add.text(400, 90, '*CLICK HERE TO* \n*GET A VIP PASS &* \n*CHAT WITH RITA*', { font: 'bold 32px Times New Roman', fill: '#ebe834' });
         chatButton.setInteractive();
 
         // Handle click event to switch to chat scene
@@ -325,13 +330,13 @@ class NewScene extends Phaser.Scene {
           this.scene.start('ChatScene');
         });
 
-        this.add.image(500, 500, 'rita').setScale(.75);
+        this.add.image(600, 475, 'rita-gown').setScale(.35);
         this.add.image(400, 275, 'award').setScale(.50);
         this.add.image(330, 275, 'award').setScale(.30);
         this.add.image(485, 275, 'award').setScale(.35);
 
-        this.add.text(180, 20, 'Great Work!', { font: 'bold 50px Courier New', fill: '#f50a41' });
-        this.add.text(180, 80, 'Now I am famous!', { font: 'bold 25px Courier New', fill: '#f5930a' });
+        this.add.text(130, 20, 'Great Work!', { font: 'bold 50px Courier New', fill: '#f50a41' });
+        this.add.text(130, 80, 'Now I am famous!', { font: 'bold 25px Courier New', fill: '#f5930a' });
       },
     });
   }
